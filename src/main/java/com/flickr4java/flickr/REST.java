@@ -146,16 +146,15 @@ public class REST extends Transport {
         RequestContext requestContext = RequestContext.getRequestContext();
         Auth auth = requestContext.getAuth();
         OAuth10aService service = OAuthUtilities.createOAuthService(apiKey, sharedSecret, connectTimeoutMs, readTimeoutMs);
-        //TODO: Fix the negative in if statement, confusing and weird
-        if (auth != null) {
-            OAuth1AccessToken requestToken = new OAuth1AccessToken(auth.getToken(), auth.getTokenSecret());
-            service.signRequest(requestToken, request);
-        } else {
+        if (auth == null) {
             // For calls that do not require authorization e.g. flickr.people.findByUsername which could be the
             // first call if the user did not supply the user-id (i.e. nsid).
             if (!parameters.containsKey(Flickr.API_KEY)) {
                 request.addQuerystringParameter(Flickr.API_KEY, apiKey);
             }
+        } else {
+            OAuth1AccessToken requestToken = new OAuth1AccessToken(auth.getToken(), auth.getTokenSecret());
+            service.signRequest(requestToken, request);
         }
 
         if (Flickr.debugRequest) {
