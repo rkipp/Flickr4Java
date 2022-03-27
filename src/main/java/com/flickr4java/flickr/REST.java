@@ -147,6 +147,7 @@ public class REST extends Transport {
         RequestContext requestContext = RequestContext.getRequestContext();
         Auth auth = requestContext.getAuth();
         OAuth10aService service = OAuthUtilities.createOAuthService(apiKey, sharedSecret, connectTimeoutMs, readTimeoutMs);
+        //TODO: Fix the negative in if statement, confusing and weird
         if (auth != null) {
             OAuth1AccessToken requestToken = new OAuth1AccessToken(auth.getToken(), auth.getTokenSecret());
             service.signRequest(requestToken, request);
