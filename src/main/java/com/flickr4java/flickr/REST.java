@@ -43,7 +43,7 @@ import java.util.concurrent.ExecutionException;
  * @version $Id: REST.java,v 1.26 2009/07/01 22:07:08 x-mago Exp $
  */
 public class REST extends Transport {
-
+    //TODO: Refactor variable name to LOGGER
     private static final Logger logger = LoggerFactory.getLogger(REST.class);
 
     private static final String PATH = "/services/rest/";
