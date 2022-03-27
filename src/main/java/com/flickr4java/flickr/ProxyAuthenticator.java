@@ -10,10 +10,10 @@ import java.net.PasswordAuthentication;
  * @version $Id: ProxyAuthenticator.java,v 1.1 2007/11/25 00:26:51 x-mago Exp $
  */
 public class ProxyAuthenticator extends Authenticator {
-    //TODO Include explicit scoping
-    String userName = "";
 
-    String passWord = "";
+    public String userName = "";
+
+    public String passWord = "";
 
     public ProxyAuthenticator(String userName, String passWord) {
         this.userName = userName;
