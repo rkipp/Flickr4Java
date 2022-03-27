@@ -339,7 +339,6 @@ public class REST extends Transport {
     private void dumpResponseToFile(OAuthRequest request, String strXml) throws IOException {
         Verb verb = request.getVerb();
         Optional<String> flickrMethod = Optional.empty();
-        //TODO: Needs a default statement
         switch (verb) {
             case GET:
                 flickrMethod = request.getQueryStringParams().getParams().stream().filter(param -> param.getKey().equals("method")).findFirst().map(Parameter::getValue);
