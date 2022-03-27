@@ -43,8 +43,7 @@ import java.util.concurrent.ExecutionException;
  * @version $Id: REST.java,v 1.26 2009/07/01 22:07:08 x-mago Exp $
  */
 public class REST extends Transport {
-    //TODO: Refactor variable name to LOGGER
-    private static final Logger logger = LoggerFactory.getLogger(REST.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(REST.class);
 
     private static final String PATH = "/services/rest/";
 
@@ -160,7 +159,7 @@ public class REST extends Transport {
         }
 
         if (Flickr.debugRequest) {
-            logger.debug("GET: " + request.getCompleteUrl());
+            LOGGER.debug("GET: " + request.getCompleteUrl());
         }
 
         try {
@@ -239,7 +238,7 @@ public class REST extends Transport {
         }
         String strXml = scribeResponse.getBody().trim();
         if (Flickr.debugStream) {
-            logger.debug(strXml);
+            LOGGER.debug(strXml);
         }
         if (strXml.startsWith("oauth_problem=")) {
             throw new FlickrRuntimeException(strXml);
@@ -271,7 +270,7 @@ public class REST extends Transport {
         try {
             URL url = UrlUtilities.buildUrl(getScheme(), getHost(), getPort(), path, parameters);
             if (Flickr.debugRequest) {
-                logger.debug("GET: " + url);
+                LOGGER.debug("GET: " + url);
             }
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -354,9 +353,9 @@ public class REST extends Transport {
             String filename = String.format("%s.xml", flickrMethod.get());
             Path filePath = Paths.get("src/test/resources/payloads/" + verb, filename);
             Files.write(filePath, strXml.getBytes());
-            logger.info(String.format("Writing payload to file '%s'", filePath));
+            LOGGER.info(String.format("Writing payload to file '%s'", filePath));
         } else {
-            logger.warn("Not dumping response to file as method not found in request for URL {}", request.getUrl());
+            LOGGER.warn("Not dumping response to file as method not found in request for URL {}", request.getUrl());
         }
     }
 }
