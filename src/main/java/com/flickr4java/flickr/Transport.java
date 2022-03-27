@@ -14,6 +14,7 @@ import java.util.Map;
  * @author Matt Ray
  * @author Anthony Eden
  */
+// TODO: Abstract classes should get Abstract naming
 public abstract class Transport {
 
     public static final String REST = "REST";
