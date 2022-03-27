@@ -6,7 +6,7 @@ package com.flickr4java.flickr.machinetags;
  * @version $Id: Pair.java,v 1.2 2009/07/12 22:43:07 x-mago Exp $
  */
 public class Pair {
-
+//    TODO: Add Explicit scoping
     String namespace;
 
     String predicate;
