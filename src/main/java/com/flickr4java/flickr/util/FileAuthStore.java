@@ -133,9 +133,9 @@ public class FileAuthStore implements AuthStore {
         this.auths.clear();
         this.authsByUser.clear();
         File[] auths = this.authStoreDir.listFiles(new AuthFilenameFilter());
-        //TODO: Turn into forEach to avoid null pointers
-        for (int i = 0; i < auths.length; i++) {
-            auths[i].delete();
+
+        for (File auth : auths) {
+            auth.delete();
         }
     }
 
