@@ -48,8 +48,7 @@ public class ActivityInterface {
      * @throws FlickrException if there was a problem connecting to Flickr
      */
     public ItemList<Item> userComments(int perPage, int page) throws FlickrException {
-        //TODO Move declaration to after error throw to avoid excessive variables
-        ItemList<Item> items = new ItemList<Item>();
+
         Map<String, Object> parameters = new HashMap<String, Object>();
         parameters.put("method", METHOD_USER_COMMENTS);
 
@@ -65,7 +64,7 @@ public class ActivityInterface {
         if (response.isError()) {
             throw new FlickrException(response.getErrorCode(), response.getErrorMessage());
         }
-
+        ItemList<Item> items = new ItemList<Item>();
         Element itemList = response.getPayload();
         NodeList itemElements = itemList.getElementsByTagName("item");
         items.setPage(itemList.getAttribute("page"));
