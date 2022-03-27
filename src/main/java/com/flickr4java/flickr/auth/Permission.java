@@ -92,19 +92,24 @@ public class Permission implements Serializable {
 
     @Override
     public String toString() {
-        //TODO Move switch to define variable, and return that variable
+        String returnval;
         switch (type) {
         case NONE_TYPE:
-            return "none";
+            returnval = "none";
+            break;
         case READ_TYPE:
-            return "read";
+            returnval = "read";
+            break;
         case WRITE_TYPE:
-            return "write";
+            returnval = "write";
+            break;
         case DELETE_TYPE:
-            return "delete";
+            returnval = "delete";
+            break;
         default:
             throw new IllegalStateException("Unsupported type: " + type);
         }
+        return returnval;
     }
 
 }
