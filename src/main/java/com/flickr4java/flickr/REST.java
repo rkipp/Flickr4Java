@@ -347,6 +347,8 @@ public class REST extends Transport {
             case POST:
                  flickrMethod = request.getBodyParams().getParams().stream().filter(param -> param.getKey().equals("method")).findFirst().map(Parameter::getValue);
                 break;
+            default:
+                break;
         }
         if (flickrMethod.isPresent()) {
             String filename = String.format("%s.xml", flickrMethod.get());
