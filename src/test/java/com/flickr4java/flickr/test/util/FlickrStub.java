@@ -2,7 +2,7 @@
 package com.flickr4java.flickr.test.util;
 
 import com.flickr4java.flickr.IFlickr;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.activity.ActivityInterface;
 import com.flickr4java.flickr.auth.Auth;
 import com.flickr4java.flickr.auth.AuthInterface;
@@ -50,7 +50,7 @@ public class FlickrStub implements IFlickr {
 
     private String sharedSecret;
 
-    private Transport transport;
+    private AbstractTransport transport;
 
     private Auth auth;
 
@@ -194,7 +194,7 @@ public class FlickrStub implements IFlickr {
      * 
      * @return The Tranport interface
      */
-    public Transport getTransport() {
+    public AbstractTransport getTransport() {
         return transport;
     }
 
@@ -203,7 +203,7 @@ public class FlickrStub implements IFlickr {
      * 
      * @param transport
      */
-    public void setTransport(Transport transport) {
+    public void setTransport(AbstractTransport transport) {
         if (transport == null) {
             throw new IllegalArgumentException("Transport must not be null");
         }
@@ -426,7 +426,7 @@ public class FlickrStub implements IFlickr {
 
     public Uploader getUploader() {
         if (uploader == null) {
-            Transport uploadTransport = new TransportStub();
+            AbstractTransport uploadTransport = new TransportStub();
             uploader = new Uploader(apiKey, sharedSecret, uploadTransport);
         }
         return uploader;

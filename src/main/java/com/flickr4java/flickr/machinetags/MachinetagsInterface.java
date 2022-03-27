@@ -2,7 +2,7 @@ package com.flickr4java.flickr.machinetags;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.util.XMLUtilities;
 
 import org.w3c.dom.Element;
@@ -244,9 +244,9 @@ public class MachinetagsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
-    public MachinetagsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public MachinetagsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

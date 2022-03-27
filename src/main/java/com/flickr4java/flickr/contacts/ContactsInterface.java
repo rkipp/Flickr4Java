@@ -3,7 +3,7 @@ package com.flickr4java.flickr.contacts;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.util.XMLUtilities;
 
 import org.w3c.dom.Element;
@@ -34,9 +34,9 @@ public class ContactsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
-    public ContactsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public ContactsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

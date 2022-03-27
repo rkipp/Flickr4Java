@@ -4,7 +4,7 @@ package com.flickr4java.flickr.photosets;
 import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.people.User;
 import com.flickr4java.flickr.photos.Extras;
 import com.flickr4java.flickr.photos.Photo;
@@ -67,9 +67,9 @@ public class PhotosetsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
-    public PhotosetsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public PhotosetsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

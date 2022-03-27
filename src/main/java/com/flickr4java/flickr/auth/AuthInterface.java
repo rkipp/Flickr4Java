@@ -6,7 +6,7 @@ import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.FlickrRuntimeException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.people.User;
 import com.flickr4java.flickr.util.ByteUtilities;
 import com.flickr4java.flickr.util.XMLUtilities;
@@ -48,7 +48,7 @@ public class AuthInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
     private final static Logger logger = LoggerFactory.getLogger(AuthInterface.class);
 
@@ -62,7 +62,7 @@ public class AuthInterface {
      * @param transport
      *            The Transport interface
      */
-    public AuthInterface(String apiKey, String sharedSecret, Transport transport) {
+    public AuthInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transport;

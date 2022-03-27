@@ -80,7 +80,7 @@ public class Flickr implements IFlickr {
 
     private String sharedSecret;
 
-    private Transport transport;
+    private AbstractTransport transport;
 
     private Auth auth;
 
@@ -278,7 +278,7 @@ public class Flickr implements IFlickr {
      * @param sharedSecret
      * @param transport
      */
-    public Flickr(String apiKey, String sharedSecret, Transport transport) {
+    public Flickr(String apiKey, String sharedSecret, AbstractTransport transport) {
         setApiKey(apiKey);
         setSharedSecret(sharedSecret);
         setTransport(transport);
@@ -353,7 +353,7 @@ public class Flickr implements IFlickr {
      * @return The Tranport interface
      */
     @Override
-    public Transport getTransport() {
+    public AbstractTransport getTransport() {
         return transport;
     }
 
@@ -363,7 +363,7 @@ public class Flickr implements IFlickr {
      * @param transport
      */
     @Override
-    public void setTransport(Transport transport) {
+    public void setTransport(AbstractTransport transport) {
         if (transport == null) {
             throw new IllegalArgumentException("Transport must not be null");
         }

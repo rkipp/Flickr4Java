@@ -3,7 +3,7 @@ package com.flickr4java.flickr.favorites;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoContext;
 import com.flickr4java.flickr.photos.PhotoList;
@@ -43,9 +43,9 @@ public class FavoritesInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
-    public FavoritesInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public FavoritesInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

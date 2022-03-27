@@ -2,7 +2,7 @@ package com.flickr4java.flickr.photos.upload;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -27,9 +27,9 @@ public class UploadInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public UploadInterface(String apiKey, String sharedSecret, Transport transport) {
+    public UploadInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transport;

@@ -50,9 +50,9 @@ public interface IFlickr {
 
     void setSharedSecret(String sharedSecret);
 
-    Transport getTransport();
+    AbstractTransport getTransport();
 
-    void setTransport(Transport transport);
+    void setTransport(AbstractTransport transport);
 
     AuthInterface getAuthInterface();
 

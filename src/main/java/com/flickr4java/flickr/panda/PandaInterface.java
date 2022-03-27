@@ -2,7 +2,7 @@ package com.flickr4java.flickr.panda;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoList;
 import com.flickr4java.flickr.photos.PhotoUtils;
@@ -33,9 +33,9 @@ public class PandaInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public PandaInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public PandaInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

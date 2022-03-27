@@ -3,7 +3,7 @@ package com.flickr4java.flickr.groups.pools;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.groups.Group;
 import com.flickr4java.flickr.groups.GroupList;
 import com.flickr4java.flickr.photos.Extras;
@@ -45,9 +45,9 @@ public class PoolsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transport;
+    private final AbstractTransport transport;
 
-    public PoolsInterface(String apiKey, String sharedSecret, Transport transport) {
+    public PoolsInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transport;

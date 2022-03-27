@@ -3,7 +3,7 @@
  */
 package com.flickr4java.flickr.push;
 
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 
 /**
  * @author acaplan
@@ -23,7 +23,7 @@ public class PushInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
     /**
      * 
@@ -31,7 +31,7 @@ public class PushInterface {
      * @param sharedSecret
      * @param transportAPI
      */
-    public PushInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public PushInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

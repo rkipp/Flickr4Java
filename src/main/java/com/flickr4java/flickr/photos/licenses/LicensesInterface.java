@@ -4,7 +4,7 @@ package com.flickr4java.flickr.photos.licenses;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -30,9 +30,9 @@ public class LicensesInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public LicensesInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public LicensesInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

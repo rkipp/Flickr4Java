@@ -4,7 +4,7 @@ package com.flickr4java.flickr.photos.transform;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,9 +21,9 @@ public class TransformInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public TransformInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public TransformInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

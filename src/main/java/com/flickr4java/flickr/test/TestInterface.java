@@ -4,7 +4,7 @@ package com.flickr4java.flickr.test;
 import com.flickr4java.flickr.Flickr;
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.people.User;
 
 import org.w3c.dom.Element;
@@ -31,9 +31,9 @@ public class TestInterface {
 
     private final String sharedSecret;
 
-    private final Transport transport;
+    private final AbstractTransport transport;
 
-    public TestInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public TestInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transportAPI;

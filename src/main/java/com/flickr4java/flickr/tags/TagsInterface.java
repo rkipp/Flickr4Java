@@ -3,7 +3,7 @@ package com.flickr4java.flickr.tags;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoList;
 import com.flickr4java.flickr.photos.PhotoUtils;
@@ -52,7 +52,7 @@ public class TagsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transportAPI;
+    private final AbstractTransport transportAPI;
 
     /**
      * Construct a TagsInterface.
@@ -62,7 +62,7 @@ public class TagsInterface {
      * @param transportAPI
      *            The Transport interface
      */
-    public TagsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public TagsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
 
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;

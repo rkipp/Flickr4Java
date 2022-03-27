@@ -2,7 +2,7 @@ package com.flickr4java.flickr.groups.members;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.util.StringUtilities;
 
 import org.w3c.dom.Element;
@@ -25,9 +25,9 @@ public class MembersInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public MembersInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public MembersInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

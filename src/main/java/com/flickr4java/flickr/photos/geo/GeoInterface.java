@@ -2,7 +2,7 @@ package com.flickr4java.flickr.photos.geo;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.photos.GeoData;
 import com.flickr4java.flickr.photos.Photo;
 import com.flickr4java.flickr.photos.PhotoList;
@@ -46,9 +46,9 @@ public class GeoInterface {
 
     private final String sharedSecret;
 
-    private final Transport transport;
+    private final AbstractTransport transport;
 
-    public GeoInterface(String apiKey, String sharedSecret, Transport transport) {
+    public GeoInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transport;

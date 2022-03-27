@@ -2,7 +2,7 @@ package com.flickr4java.flickr.photosets.comments;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.photos.comments.Comment;
 import com.flickr4java.flickr.util.XMLUtilities;
 
@@ -34,9 +34,9 @@ public class PhotosetsCommentsInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
-    public PhotosetsCommentsInterface(String apiKey, String sharedSecret, Transport transport) {
+    public PhotosetsCommentsInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transport;

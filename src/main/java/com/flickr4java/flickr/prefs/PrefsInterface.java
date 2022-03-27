@@ -5,7 +5,7 @@ package com.flickr4java.flickr.prefs;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 
 import org.w3c.dom.Element;
 
@@ -33,7 +33,7 @@ public class PrefsInterface {
 
     private String sharedSecret;
 
-    private Transport transportAPI;
+    private AbstractTransport transportAPI;
 
     /**
      * Construct a PrefsInterface.
@@ -43,7 +43,7 @@ public class PrefsInterface {
      * @param transportAPI
      *            The Transport interface
      */
-    public PrefsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public PrefsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transportAPI = transportAPI;

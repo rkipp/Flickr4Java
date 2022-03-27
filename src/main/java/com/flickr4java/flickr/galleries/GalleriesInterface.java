@@ -5,7 +5,7 @@ package com.flickr4java.flickr.galleries;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.people.User;
 import com.flickr4java.flickr.photos.Extras;
 import com.flickr4java.flickr.photos.Photo;
@@ -49,7 +49,7 @@ public class GalleriesInterface {
 
     private String sharedSecret;
 
-    private Transport transport;
+    private AbstractTransport transport;
 
     /**
      * Construct a GalleriesInterface.
@@ -59,7 +59,7 @@ public class GalleriesInterface {
      * @param transportAPI
      *            The Transport interface
      */
-    public GalleriesInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public GalleriesInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transportAPI;

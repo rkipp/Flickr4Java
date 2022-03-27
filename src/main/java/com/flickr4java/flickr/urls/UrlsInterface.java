@@ -3,7 +3,7 @@ package com.flickr4java.flickr.urls;
 
 import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.galleries.Gallery;
 import com.flickr4java.flickr.groups.Group;
 import com.flickr4java.flickr.people.User;
@@ -38,7 +38,7 @@ public class UrlsInterface {
 
     private final String sharedSecret;
 
-    private final Transport transport;
+    private final AbstractTransport transport;
 
     /**
      * Construct a UrlsInterface.
@@ -48,7 +48,7 @@ public class UrlsInterface {
      * @param transportAPI
      *            The Transport interface
      */
-    public UrlsInterface(String apiKey, String sharedSecret, Transport transportAPI) {
+    public UrlsInterface(String apiKey, String sharedSecret, AbstractTransport transportAPI) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transportAPI;

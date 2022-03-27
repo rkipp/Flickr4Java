@@ -42,7 +42,7 @@ import java.util.concurrent.ExecutionException;
  * @author Anthony Eden
  * @version $Id: REST.java,v 1.26 2009/07/01 22:07:08 x-mago Exp $
  */
-public class REST extends Transport {
+public class REST extends AbstractTransport {
     private static final Logger LOGGER = LoggerFactory.getLogger(REST.class);
 
     private static final String PATH = "/services/rest/";

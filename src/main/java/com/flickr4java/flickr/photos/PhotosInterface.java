@@ -5,7 +5,7 @@ import com.flickr4java.flickr.FlickrException;
 import com.flickr4java.flickr.REST;
 import com.flickr4java.flickr.RequestContext;
 import com.flickr4java.flickr.Response;
-import com.flickr4java.flickr.Transport;
+import com.flickr4java.flickr.AbstractTransport;
 import com.flickr4java.flickr.people.User;
 import com.flickr4java.flickr.photos.geo.GeoInterface;
 import com.flickr4java.flickr.util.IOUtilities;
@@ -108,9 +108,9 @@ public class PhotosInterface {
 
     private final String sharedSecret;
 
-    private final Transport transport;
+    private final AbstractTransport transport;
 
-    public PhotosInterface(String apiKey, String sharedSecret, Transport transport) {
+    public PhotosInterface(String apiKey, String sharedSecret, AbstractTransport transport) {
         this.apiKey = apiKey;
         this.sharedSecret = sharedSecret;
         this.transport = transport;
