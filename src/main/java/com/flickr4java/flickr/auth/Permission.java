@@ -92,6 +92,7 @@ public class Permission implements Serializable {
 
     @Override
     public String toString() {
+        //TODO Move switch to define variable, and return that variable
         switch (type) {
         case NONE_TYPE:
             return "none";
